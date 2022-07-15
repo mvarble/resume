@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:wght@600&family=Lora&display=swap');
+
+@import '~katex/dist/katex.css';
+
+.resume {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+  font-size: 9.5pt;
+  color: var(--font-color);
+  font-family: var(--body-font);
+  color-adjust: exact;
+}
+
+.resume h1 { 
+  font-size: 16pt; 
+  margin: 0 0 0.25em 0;
+  color: var(--alt);
+  border-bottom: 2px solid var(--alt);
+  font-family: var(--header-font);
+}
+
+.resume h2, .resume h3, .resume h4, .resume h5, .resume h6 {
+  color: var(--alt);
+  font-family: var(--header-font);
+}
+
+.resume a {
+  text-decoration: none;
+  color: var(--main);
+}
+
+.resume p { margin: 0; }
+
+.backdrop > :first-child {
+  background: var(--main);
+  position: absolute;
+  height: calc( var(--color-border-split) - var(--white-border-padding) );
+  width: calc( 100% - 2 * var(--white-border-padding) );
+  top: var(--white-border-padding);
+  left: var(--white-border-padding);
+}
+
+.backdrop > :last-child {
+  background: var(--alt);
+  position: absolute;
+  height: calc( 100% - var(--color-border-split) - var(--white-border-padding) );
+  width: calc( 100% - 2 * var(--white-border-padding) );
+  top: var(--color-border-split);
+  left: var(--white-border-padding);
+}
+
+.content {
+  height: 100%;
+  width: 100%;
+  padding: var(--color-border-padding);
+  box-sizing: border-box;
+}
+
+.content > :first-child {
+  position: relative;
+  background: white;
+  height: 100%;
+  width: 100%;
+  padding: 0.75em 1.5em;
+  box-sizing: border-box;
+}
+
+.contact .name {
+  font-family: var(--header-font);
+  display: block;
+  font-size: 28pt;
+  text-align: center;
+  color: var(--alt);
+}
+
+.contact-info {
+  width: 100%;
+  padding: 0.33em;
+  margin: 1em 0;
+  color: var(--alt);
+  border-top: 3px solid var(--alt);
+  border-bottom: 3px solid var(--alt);
+  display: flex;
+  list-style-type: none;
+  font-size: 8pt;
+}
+
+.contact-info a {
+  text-decoration: none;
+  color: var(--alt);
+}
+
+.contact-info > * {
+  padding: 0.66em;
+  border-right: 2px solid var(--alt);
+  flex-grow: 1;
+}
+
+.contact-info > *:last-child {
+  border-right: none;
+}
+
+.contact-info > * > :first-child {
+  margin-right: 0.5em;
+}
+
+.academic-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.academic-item {
+  font-size: 7pt;
+  display: flex;
+  align-items: center;
+  background: var(--alt);
+  margin: 0.5em;
+  border: 1px solid var(--alt);
+}
+
+.academic-item-icon {
+  background: var(--alt);
+  padding: 0 1em;
+  color: white;
+}
+
+.academic-item-info {
+  background: white;
+  flex-grow: 1;
+}
+
+.academic-item-info > * {
+  list-style-type: none;
+  padding: 0.5em 0 0.5em 1em;
+  margin: 0;
+}
+
+.resume-block {
+  position: relative;
+  padding: 0 1em 1em 1em;
+  border-left: 2px solid var(--alt);
+  border-right: 2px solid var(--main);
+}
+
+.resume-block:first-child {
+  padding-top: 0.5em;
+}
+
+.resume-block:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0.75em;
+}
+
+.resume-block ul { 
+  margin: 0.25em 0 0 1em; 
+  padding: 0; 
+}
+
+.resume-block li {
+  padding: 0.15em 0;
+}
+
+.resume-block p { margin: 0.25em 0 0 0; }
+
+.resume-block .resume-block-circle {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 1px;
+  left: -8.5px;
+}
+
+.resume-block:first-child .resume-block-circle {
+  top: calc( 1px + 0.5em );
+}
+
+.resume-block .resume-block-header { 
+  display: flex; 
+}
+
+.resume-block .resume-block-header > :first-child { 
+  margin-right: 0.5em;
+  font-weight: bold;
+}
+
+.resume-block .resume-block-header > :nth-child(2) { 
+  font-style: oblique;
+}
+
+.resume-block .resume-block-header > :last-child { 
+  text-align: right; 
+  flex-grow: 1;
+  font-weight: bold;
+}
+
+.resume-block .resume-block-body {
+}
+
+:root {
+  --main: #7aa682;
+  --alt: #514761;
+  --header-font: 'Ibarra Real Nova', serif;
+  --body-font: 'Lora', serif;
+  --font-color: black;
+  --white-border-padding: 1em;
+  --color-border-padding: 1.5em;
+  --color-border-split: 38.2%;
+}
