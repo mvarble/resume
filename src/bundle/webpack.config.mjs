@@ -51,7 +51,7 @@ export default {
     ],
   },
   plugins: [
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({ filename: '[name].[fullhash].css' }),
   ],
   resolve: {
     extensions: ['.js'],

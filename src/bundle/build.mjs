@@ -22,12 +22,12 @@ const buildConfig = merge(webpackConfig, {
   target: 'node',
 });
 
-const HEAD = 
+const BUILD_HEAD = css => 
 `<!doctype html>
 <html>
   <head>
     <title>Matthew Varble's Resume</title>
-    <link href="./main.css" rel="stylesheet">
+    <link href="${css}" rel="stylesheet">
     <meta charset="utf-8">
     <meta name="viewport" content="width=1mm">
   </head>
@@ -52,18 +52,30 @@ webpack(buildConfig, (err, stats) => {
   const fsStream = fs.createWriteStream(outputPath);
 
   // pipe the resume stream to the write stream
-  createResumeStream().then(stream => {
+  createResumeStream(stats).then(stream => {
     stream.pipe(fsStream);
   });
 });
 
-async function createResumeStream() {
+async function createResumeStream(stats) {
+  // build the initial DOM string stream
+  const cssName = Object.keys(stats.compilation.assets)
+    .find(name => name.slice(-4) === '.css');
+  const headStream = stringToUtf8Stream(BUILD_HEAD('./' + cssName));
+
+  // build the resume DOM using React
   const outputPath = path.resolve(process.cwd(), 'output', 'resume.js');
   const resumeElm = (await import(outputPath)).default;
+  const resumeStream = renderToStaticNodeStream(resumeElm);
+
+  // build the final DOM string stream
+  const tailStream = stringToUtf8Stream(TAIL);
+
+  // combine the streams and return
   const combinedStream = CombinedStream.create();
-  combinedStream.append(stringToUtf8Stream(HEAD));
-  combinedStream.append(renderToStaticNodeStream(resumeElm));
-  combinedStream.append(stringToUtf8Stream(TAIL));
+  combinedStream.append(headStream);
+  combinedStream.append(resumeStream);
+  combinedStream.append(tailStream);
   return combinedStream;
 }
 
