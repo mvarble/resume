@@ -1,6 +1,4 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGraduationCap } from '@fortawesome/free-solid-svg-icons';
 
 import { 
   academicItem,
@@ -21,7 +19,7 @@ export default function Academics({ academics }) {
             </ul>
           </div>
           <div className={ academicItemIcon }>
-            <FontAwesomeIcon icon={ faGraduationCap } />
+            <i className="fa-solid fa-graduation-cap" />
           </div>
         </div>
       ))

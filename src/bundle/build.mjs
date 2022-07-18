@@ -27,7 +27,7 @@ const HEAD =
 <html>
   <head>
     <title>Matthew Varble's Resume</title>
-    <link href="/main.css" rel="stylesheet">
+    <link href="./main.css" rel="stylesheet">
   </head>
   <body class="letter">
     <div>`;
@@ -38,8 +38,6 @@ const TAIL =
   </body>
 </html>`;
 
-const NAME = `resume.${(new Date()).toISOString()}`;
-
 webpack(buildConfig, (err, stats) => {
   // quit if error
   if (err || stats.hasError) {
@@ -48,7 +46,7 @@ webpack(buildConfig, (err, stats) => {
   }
 
   // create the write stream
-  const outputPath = path.join(buildConfig.output.path, `${NAME}.html`);
+  const outputPath = path.join(buildConfig.output.path, 'index.html');
   const fsStream = fs.createWriteStream(outputPath);
 
   // pipe the resume stream to the write stream
