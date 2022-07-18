@@ -3,7 +3,6 @@ import {
   resumeBlock,
   resumeBlockCircle,
   resumeBlockHeader,
-  resumeBlockBody,
 } from './riddler.module.css';
 
 export default function ResumeBlock({ title, subtitle, date, children }) {
@@ -18,7 +17,7 @@ export default function ResumeBlock({ title, subtitle, date, children }) {
         <circle cx={ 50 } cy={ 50 } r={ 30 } fill="white" />
         <path 
           stroke="var(--alt)" 
-          strokeWidth={ 10 } 
+          strokeWidth={ 14 } 
           strokeLinecap="square"
           fill="white" 
           d="M50 80 A30 30, 0, 0 0, 50 20" />
@@ -28,7 +27,7 @@ export default function ResumeBlock({ title, subtitle, date, children }) {
         { parsedSubtitle && <span>({ parsedSubtitle })</span> }
         <span>{ date }</span>
       </div>
-      <div className={ resumeBlockBody } children={ children }/>
+      <div children={ children }/>
     </div>
   );
 }

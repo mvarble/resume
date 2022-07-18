@@ -1,31 +1,54 @@
-@import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:wght@600&family=Lora&display=swap');
-
+@import url("https://use.typekit.net/fae5xjm.css");
 @import '~katex/dist/katex.css';
+
 @import '~@fortawesome/fontawesome-free/css/all.css';
 
+@font-face {
+  font-family: minion-pro;
+  src: url(./minion-pro.ttf);
+}
+
 body {
-  background: url('../../../static/marble.jpg');
+  background: url('./marble.jpg');
   background-size: 350px;
   filter: darken(50%);
   print-color-adjust: exact;
+}
+
+:global(.math) {
+  font-size: 3mm;
+}
+
+.resume-container {
+  display: flex;
+  padding: 1em 0;
+}
+
+.resume-container .pad {
+  flex-grow: 1;
+  position: relative;
+  overflow: hidden;
 }
 
 .resume {
   display: flex;
   flex-direction: column;
   position: relative;
-  height: 100%;
-  font-size: 9.5pt;
+  font-size: 3.6mm;
   color: var(--font-color);
   font-family: var(--body-font);
   overflow: visible;
+  margin: 0;
+  flex-shrink: 0;
+  flex-grow: 0;
 }
 
 .resume h1 { 
-  font-size: 16pt; 
-  margin: 0 0 0.25em 0;
+  font-size: 6mm; 
+  font-weight: 600;
+  margin: 0 0 1mm 0;
   color: var(--alt);
-  border-bottom: 2px solid var(--alt);
+  border-bottom: 0.6mm solid var(--alt);
   font-family: var(--header-font);
 }
 
@@ -44,7 +67,7 @@ body {
 .coffee-cup {
   position: absolute;
   top: 200px;
-  left: 820px;
+  left: 30px;
   width: 400px;
   transform: rotate(160deg);
 }
@@ -52,7 +75,7 @@ body {
 .pencil {
   position: absolute;
   top: 400px;
-  left: -550px;
+  right: -260px;
   transform: rotate(107deg);
 }
 
@@ -64,7 +87,16 @@ body {
 }
 
 @media print {
-  .coffee-cup, .pencil, .coffee-stain {
+  .resume-container {
+    display: block;
+    padding: 0;
+  }
+
+  .resume-container .pad {
+    display: none;
+  }
+
+  .coffee-stain {
     display: none;
   }
 
@@ -95,7 +127,7 @@ body {
 .content {
   height: 100%;
   width: 100%;
-  padding: var(--color-border-padding);
+  padding: calc( var(--color-border-padding) + var(--white-border-padding) );
   box-sizing: border-box;
 }
 
@@ -104,28 +136,29 @@ body {
   background: white;
   height: 100%;
   width: 100%;
-  padding: 0.75em 1.5em;
+  padding: 5mm 5mm;
   box-sizing: border-box;
 }
 
 .contact .name {
   font-family: var(--header-font);
+  font-weight: 600;
   display: block;
-  font-size: 28pt;
+  font-size: 12mm;
   text-align: center;
   color: var(--alt);
 }
 
 .contact-info {
   width: 100%;
-  padding: 0.33em;
-  margin: 1em 0;
+  padding: 0.33mm;
+  margin: 1mm 0;
   color: var(--alt);
-  border-top: 3px solid var(--alt);
-  border-bottom: 3px solid var(--alt);
+  border-top: 0.6mm solid var(--alt);
+  border-bottom: 0.6mm solid var(--alt);
   display: flex;
   list-style-type: none;
-  font-size: 8pt;
+  font-size: 3.2mm;
 }
 
 .contact-info a {
@@ -134,9 +167,10 @@ body {
 }
 
 .contact-info > * {
-  padding: 0.66em;
-  border-right: 2px solid var(--alt);
+  padding: 0.66mm;
+  border-right: 0.5mm solid var(--alt);
   flex-grow: 1;
+  text-align: center;
 }
 
 .contact-info > *:last-child {
@@ -147,18 +181,34 @@ body {
   margin-right: 0.5em;
 }
 
+.objective {
+  display: flex; 
+  width: 100%; 
+  align-items: baseline;
+  margin: 0.75em 0;
+}
+
+.objective > :first-child {
+  width: 70%;
+}
+
+.objective > :nth-child(2) {
+  width: 30%;
+}
+
 .academic-items {
   display: flex;
   flex-direction: column;
 }
 
 .academic-item {
-  font-size: 7pt;
+  font-size: 2.7mm;
   display: flex;
   align-items: center;
   background: var(--alt);
-  margin: 0.5em;
-  border: 1px solid var(--alt);
+  margin: 2mm 0 2mm 1mm;
+  border: 0.5mm solid var(--alt);
+  border-right: none;
 }
 
 .academic-item-icon {
@@ -181,8 +231,8 @@ body {
 .resume-block {
   position: relative;
   padding: 0 1em 1em 1em;
-  border-left: 2px solid var(--alt);
-  border-right: 2px solid var(--main);
+  border-left: 0.6mm solid var(--alt);
+  border-right: 0.6mm solid var(--main);
 }
 
 .resume-block:first-child {
@@ -203,18 +253,14 @@ body {
   padding: 0.15em 0;
 }
 
-.resume-block p { margin: 0.25em 0 0 0; }
+.resume-block p { margin: 0.5mm 0 0 0; }
 
 .resume-block .resume-block-circle {
   position: absolute;
-  width: 15px;
-  height: 15px;
-  top: 1px;
-  left: -8.5px;
-}
-
-.resume-block:first-child .resume-block-circle {
-  top: calc( 1px + 0.5em );
+  width: 4mm;
+  height: 4mm;
+  top: -0.4mm;
+  left: -2mm;
 }
 
 .resume-block .resume-block-header { 
@@ -222,9 +268,14 @@ body {
 }
 
 .resume-block .resume-block-header > :first-child { 
-  margin-right: 0.5em;
+  margin-right: 0.5mm;
   font-weight: bold;
 }
+
+.resume-block:first-child .resume-block-circle {
+  top: 1.6mm;
+}
+
 
 .resume-block .resume-block-header > :nth-child(2) { 
   font-style: oblique;
@@ -236,16 +287,61 @@ body {
   font-weight: bold;
 }
 
-.resume-block .resume-block-body {
+@media only screen and ((max-width: 216mm) or (max-height: 140mm)) {
+  .app {
+    overflow: hidden;
+    height: 100vh;
+  }
+
+  .message {
+    display: flex !important;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: rgba(122, 166, 130, 0.75);
+    z-index: 10;
+    color: white;
+    font-size: 12pt;
+  }
+
+  .resume-container {
+    filter: blur(10px);
+    overflow: hidden;
+  }
+
+}
+
+.message {
+  display: none;
+}
+
+.message * {
+  flex-grow: 1;
+}
+
+.message :nth-child(2) {
+  flex-grow: 0;
+  padding: 2em;
+  text-align: center;
+  max-width: 400px;
+  margin: 0 auto;
+  font-size: 12pt;
+}
+
+.message a {
+  color: var(--light-alt);
+  text-decoration: none;
 }
 
 :root {
   --main: #7aa682;
   --alt: #514761;
-  --header-font: 'Ibarra Real Nova', serif;
-  --body-font: 'Lora', serif;
+  --light-alt: #592ca2;
+  --header-font: adobe-garamond-pro, serif;
+  --body-font: minion-pro, serif;
   --font-color: black;
-  --white-border-padding: 1em;
-  --color-border-padding: 1.5em;
+  --white-border-padding: 3mm;
+  --color-border-padding: 1.5mm;
   --color-border-split: 38.2%;
 }

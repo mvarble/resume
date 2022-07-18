@@ -11,6 +11,9 @@ export default merge(webpackConfig, {
   target: 'web',
   mode: 'development',
   plugins: [
-    new HtmlWebpackPlugin({ title: "Matthew Varble's Resume" }), 
+    new HtmlWebpackPlugin({ 
+      title: "Matthew Varble's Resume",
+      template: './src/bundle/index.html',
+    }), 
   ],
 });
