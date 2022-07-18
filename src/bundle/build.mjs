@@ -28,6 +28,8 @@ const HEAD =
   <head>
     <title>Matthew Varble's Resume</title>
     <link href="./main.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=1mm">
   </head>
   <body class="letter">
     <div>`;
