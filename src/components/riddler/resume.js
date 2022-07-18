@@ -6,8 +6,11 @@ import Content from './content';
 import Contact from './contact';
 import Academics from './academics';
 import ResumeBlock from './resume-block';
+import coffeeCupSrc from '../../../static/coffee-mug.png';
+import pencilSrc from '../../../static/pencil.png';
+import coffeeStainSrc from '../../../static/coffee-stain.png';
 
-import { resume } from './riddler.module.css';
+import { resume, coffeeCup, pencil, coffeeStain } from './riddler.module.css';
 
 export default function Resume({ contents }) {
   // open up the contents
@@ -26,6 +29,9 @@ export default function Resume({ contents }) {
       <Sheet className={ resume }>
         <Backdrop />
         <Content>
+          <img className={ coffeeStain } src={ coffeeStainSrc }/>
+          <img className={ coffeeCup } src={ coffeeCupSrc }/>
+          <img className={ pencil } src={ pencilSrc }/>
           <Contact { ...contact } />
           <div style={{ display: 'flex', width: '100%', alignItems: 'baseline', marginBottom: '0.75em' }}>
             <div style={{ width: '70%' }}>

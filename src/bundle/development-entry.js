@@ -1,13 +1,11 @@
-import React from 'react';
 import { createRoot } from 'react-dom/client';
 
-import './index.css';
-import contents from './contents/matthew-varble';
-import Resume from './components/riddler';
+import '../index.css';
+import resumeElement from '../resume';
 
 document.body.className = 'letter';
 const div = document.createElement('div');
 document.body.appendChild(div);
 
 const root = createRoot(div)
-root.render(<Resume contents={ contents }/>);
+root.render(resumeElement);

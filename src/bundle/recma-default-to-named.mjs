@@ -1,4 +1,4 @@
-export function recmaDefaultToNamed({ exportName }) {
+export default function recmaDefaultToNamed({ exportName }) {
   return tree => {
     tree.body.forEach(node => {
       if (node.type !== 'ExportDefaultDeclaration') {

@@ -1,11 +1,10 @@
-const HtmlWebpackPlugin = (await import('html-webpack-plugin')).default;
-const MiniCssExtractPlugin = (await import('mini-css-extract-plugin')).default;
-const remarkFrontmatter = (await import('remark-frontmatter')).default;
-const remarkMath = (await import('remark-math')).default;
-const rehypeKatex = (await import('rehype-katex')).default;
-const remarkMdxFrontmatter = (await import('remark-mdx-frontmatter')).default;
-const { recmaDefaultToNamed } = await import('./recma-default-to-named.mjs');
-const path = await import('node:path');
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import remarkFrontmatter from 'remark-frontmatter';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import remarkMdxFrontmatter from 'remark-mdx-frontmatter';
+import recmaDefaultToNamed from './recma-default-to-named.mjs';
+import path from 'node:path';
 
 const babelLoader = {
   loader: 'babel-loader', 
@@ -33,13 +32,8 @@ const cssLoader = {
 };
 
 export default {
-  mode: 'development',
-  entry: './src/index.js',
-  target: 'web',
   output: { 
     path: path.resolve(process.cwd(), 'output'),
-    filename: 'bundle.js',
-    libraryTarget: 'commonjs2',
   },
   module: {
     rules: [
@@ -50,10 +44,13 @@ export default {
         test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/, 
         type: 'asset/resource',
       },
+      {
+        test: /\.(png|jpg)$/,
+        type: 'asset/resource',
+      },
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({ title: 'resume' }), 
     new MiniCssExtractPlugin(),
   ],
   resolve: {
