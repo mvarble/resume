@@ -48,6 +48,10 @@ body.legal.landscape  .sheet { width: 357mm; height: 215mm }
   body.legal.landscape       { width: 357mm }
 }
 
+html,body {
+  text-adjust-size: none;
+}
+
 @page { size: letter; }
 
 /* stylelint-disable font-family-no-missing-generic-family-keyword */
