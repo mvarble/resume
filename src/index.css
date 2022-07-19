@@ -1,3 +1,7 @@
 @import url(~paper-css/paper.css);
 
+html,body {
+  text-adjust-size: none;
+}
+
 @page { size: letter; }
