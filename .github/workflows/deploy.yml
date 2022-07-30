@@ -27,10 +27,14 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.PAT }}
+        ref: 'gh-pages'
     - uses: actions/download-artifact@master
       with:
         name: output
         path: ./
     - name: commit build
       run: |
-        echo $(ls)
+        ls
