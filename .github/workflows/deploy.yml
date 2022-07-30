@@ -40,7 +40,7 @@ jobs:
         git config user.email "bot@rodent.club"
         git config user.name "ratbot"
         git add -A
-        git commit -m "build for commit to '$(git branch -v --contains main)'"
+        git commit -m "test"
     - name: push build
       run: git push
         
