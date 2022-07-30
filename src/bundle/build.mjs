@@ -40,20 +40,28 @@ const TAIL =
 </html>`;
 
 // delete the output directory
-function clearDirectory(dirname) {
-  const files = fs.readdirSync(dirname);
-  for (const file of files) {
-    const childPath = path.join(dirname, file);
-    const stats = fs.lstatSync(childPath);
-      if (stats.isDirectory()) {
-        clearDirectory(childPath);
-        fs.rmdirSync(childPath);
-      } else {
-        fs.unlinkSync(childPath);
-      }
+function clearOrCreateDirectory(dirname) {
+  try {
+    const files = fs.readdirSync(dirname);
+    for (const file of files) {
+      const childPath = path.join(dirname, file);
+      const stats = fs.lstatSync(childPath);
+        if (stats.isDirectory()) {
+          clearOrCreateDirectory(childPath);
+          fs.rmdirSync(childPath);
+        } else {
+          fs.unlinkSync(childPath);
+        }
+    }
+  } catch (err) {
+    if (err.code === 'ENOENT') {
+      fs.mkdirSync(dirname);
+    } else {
+      throw err;
+    }
   }
 }
-clearDirectory('output');
+clearOrCreateDirectory('output');
 
 // build the website
 webpack(buildConfig, (err, stats) => {
