@@ -37,4 +37,8 @@ jobs:
         path: ./
     - name: commit build
       run: |
-        ls
+        git add -A
+        git commit -m "build for commit to '$(git branch -v --contains main)'"
+    - name: push build
+      run: git push
+        
