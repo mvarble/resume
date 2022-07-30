@@ -37,6 +37,8 @@ jobs:
         path: ./
     - name: commit build
       run: |
+        git config user.email "bot@rodent.club"
+        git config user.name "ratbot"
         git add -A
         git commit -m "build for commit to '$(git branch -v --contains main)'"
     - name: push build
