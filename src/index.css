@@ -1,7 +1,10 @@
 @import url(~paper-css/paper.css);
 
 html,body {
-  text-adjust-size: none;
+  text-adjust-size: none !important;
+  -ms-text-adjust-size: none !important;
+  -moz-text-adjust-size: none !important;
+  -webkit-text-adjust-size: none !important;
 }
 
 @page { size: letter; }

@@ -8,11 +8,22 @@
   src: url(./minion-pro.ttf);
 }
 
+
+@viewport {
+  width: device-width;
+  user-zoom: fixed;
+  max-zoom: 1.0;
+}
+
 body {
   background: url('./marble.jpg');
   background-size: 350px;
   filter: darken(50%);
   print-color-adjust: exact;
+}
+
+.resume {
+  font-size: 98%;
 }
 
 :global(.math) {
@@ -158,6 +169,9 @@ body {
   border-bottom: 0.6mm solid var(--alt);
   display: flex;
   list-style-type: none;
+}
+
+.contact-info {
   font-size: 3.2mm;
 }
 
@@ -209,6 +223,10 @@ body {
   margin: 2mm 0 2mm 1mm;
   border: 0.5mm solid var(--alt);
   border-right: none;
+}
+
+.academic-item * {
+  font-size: 2.7mm;
 }
 
 .academic-item-icon {

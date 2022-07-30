@@ -39,6 +39,23 @@ const TAIL =
   </body>
 </html>`;
 
+// delete the output directory
+function clearDirectory(dirname) {
+  const files = fs.readdirSync(dirname);
+  for (const file of files) {
+    const childPath = path.join(dirname, file);
+    const stats = fs.lstatSync(childPath);
+      if (stats.isDirectory()) {
+        clearDirectory(childPath);
+        fs.rmdirSync(childPath);
+      } else {
+        fs.unlinkSync(childPath);
+      }
+  }
+}
+clearDirectory('output');
+
+// build the website
 webpack(buildConfig, (err, stats) => {
   // quit if error
   if (err || stats.hasError) {
@@ -53,6 +70,7 @@ webpack(buildConfig, (err, stats) => {
   // pipe the resume stream to the write stream
   createResumeStream(stats).then(stream => {
     stream.pipe(fsStream);
+    fs.unlinkSync(path.join(buildConfig.output.path, 'resume.js'));
   });
 });
 
