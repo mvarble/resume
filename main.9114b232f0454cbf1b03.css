@@ -49,7 +49,10 @@ body.legal.landscape  .sheet { width: 357mm; height: 215mm }
 }
 
 html,body {
-  text-adjust-size: none;
+  text-adjust-size: none !important;
+  -ms-text-adjust-size: none !important;
+  -moz-text-adjust-size: none !important;
+  -webkit-text-adjust-size: none !important;
 }
 
 @page { size: letter; }
@@ -57,121 +60,121 @@ html,body {
 /* stylelint-disable font-family-no-missing-generic-family-keyword */
 @font-face {
   font-family: 'KaTeX_AMS';
-  src: url(73ea273a72f4aca30ca5.woff2) format('woff2'), url(d562e886c52f12660a41.woff) format('woff'), url(853be92419a6c3766b9a.ttf) format('truetype');
+  src: url(fonts/KaTeX_AMS-Regular.woff2) format('woff2'), url(fonts/KaTeX_AMS-Regular.woff) format('woff'), url(fonts/KaTeX_AMS-Regular.ttf) format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'KaTeX_Caligraphic';
-  src: url(a1abf90dfd72792a577a.woff2) format('woff2'), url(d757c535a2e5902f1325.woff) format('woff'), url(7489a2fbfb9bfe704420.ttf) format('truetype');
+  src: url(fonts/KaTeX_Caligraphic-Bold.woff2) format('woff2'), url(fonts/KaTeX_Caligraphic-Bold.woff) format('woff'), url(fonts/KaTeX_Caligraphic-Bold.ttf) format('truetype');
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: 'KaTeX_Caligraphic';
-  src: url(d6484fce1ef428d5bd94.woff2) format('woff2'), url(db074fa22cf224af93d7.woff) format('woff'), url(7e873d3833eb108a0758.ttf) format('truetype');
+  src: url(fonts/KaTeX_Caligraphic-Regular.woff2) format('woff2'), url(fonts/KaTeX_Caligraphic-Regular.woff) format('woff'), url(fonts/KaTeX_Caligraphic-Regular.ttf) format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'KaTeX_Fraktur';
-  src: url(931d67ea207ab37ee693.woff2) format('woff2'), url(354501bac435c3264834.woff) format('woff'), url(4c761b3711973ab04edf.ttf) format('truetype');
+  src: url(fonts/KaTeX_Fraktur-Bold.woff2) format('woff2'), url(fonts/KaTeX_Fraktur-Bold.woff) format('woff'), url(fonts/KaTeX_Fraktur-Bold.ttf) format('truetype');
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: 'KaTeX_Fraktur';
-  src: url(172d3529b26f8cedef6b.woff2) format('woff2'), url(6fdf0ac577be0ba82a4c.woff) format('woff'), url(ed305b5434865e06ffde.ttf) format('truetype');
+  src: url(fonts/KaTeX_Fraktur-Regular.woff2) format('woff2'), url(fonts/KaTeX_Fraktur-Regular.woff) format('woff'), url(fonts/KaTeX_Fraktur-Regular.ttf) format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'KaTeX_Main';
-  src: url(39890742bc957b368704.woff2) format('woff2'), url(0c3b8929d377c0e9b2f3.woff) format('woff'), url(8169508bf58f8bd92ad8.ttf) format('truetype');
+  src: url(fonts/KaTeX_Main-Bold.woff2) format('woff2'), url(fonts/KaTeX_Main-Bold.woff) format('woff'), url(fonts/KaTeX_Main-Bold.ttf) format('truetype');
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: 'KaTeX_Main';
-  src: url(20f389c4120be058d80a.woff2) format('woff2'), url(428978dc7837d46de091.woff) format('woff'), url(828abcb200061cffbaae.ttf) format('truetype');
+  src: url(fonts/KaTeX_Main-BoldItalic.woff2) format('woff2'), url(fonts/KaTeX_Main-BoldItalic.woff) format('woff'), url(fonts/KaTeX_Main-BoldItalic.ttf) format('truetype');
   font-weight: bold;
   font-style: italic;
 }
 @font-face {
   font-family: 'KaTeX_Main';
-  src: url(fe2176f79edaa716e621.woff2) format('woff2'), url(fd947498bc16392e76c2.woff) format('woff'), url(fa675e5e4bec9eb250b6.ttf) format('truetype');
+  src: url(fonts/KaTeX_Main-Italic.woff2) format('woff2'), url(fonts/KaTeX_Main-Italic.woff) format('woff'), url(fonts/KaTeX_Main-Italic.ttf) format('truetype');
   font-weight: normal;
   font-style: italic;
 }
 @font-face {
   font-family: 'KaTeX_Main';
-  src: url(f650f111a3b890d116f1.woff2) format('woff2'), url(4f35fbcc9ee8614c2bcc.woff) format('woff'), url(9eba1d77abcf2aa6e94e.ttf) format('truetype');
+  src: url(fonts/KaTeX_Main-Regular.woff2) format('woff2'), url(fonts/KaTeX_Main-Regular.woff) format('woff'), url(fonts/KaTeX_Main-Regular.ttf) format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'KaTeX_Math';
-  src: url(dcbcbd93bac0470b462d.woff2) format('woff2'), url(3f07ed67f06c720120ce.woff) format('woff'), url(bf2d440b3a42ea78a998.ttf) format('truetype');
+  src: url(fonts/KaTeX_Math-BoldItalic.woff2) format('woff2'), url(fonts/KaTeX_Math-BoldItalic.woff) format('woff'), url(fonts/KaTeX_Math-BoldItalic.ttf) format('truetype');
   font-weight: bold;
   font-style: italic;
 }
 @font-face {
   font-family: 'KaTeX_Math';
-  src: url(6d3d25f4820d0da8f01f.woff2) format('woff2'), url(96759856b4e70f3a8338.woff) format('woff'), url(8a5f936332e8028c7278.ttf) format('truetype');
+  src: url(fonts/KaTeX_Math-Italic.woff2) format('woff2'), url(fonts/KaTeX_Math-Italic.woff) format('woff'), url(fonts/KaTeX_Math-Italic.ttf) format('truetype');
   font-weight: normal;
   font-style: italic;
 }
 @font-face {
   font-family: 'KaTeX_SansSerif';
-  src: url(95591a929f0d32aa282a.woff2) format('woff2'), url(b9cd458ac6d5889ff9c3.woff) format('woff'), url(5b49f4993ae22d7975b4.ttf) format('truetype');
+  src: url(fonts/KaTeX_SansSerif-Bold.woff2) format('woff2'), url(fonts/KaTeX_SansSerif-Bold.woff) format('woff'), url(fonts/KaTeX_SansSerif-Bold.ttf) format('truetype');
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: 'KaTeX_SansSerif';
-  src: url(7d393d382f3e7fb1c637.woff2) format('woff2'), url(8d593cfaa96238d5e2f8.woff) format('woff'), url(b257a18c016f37ee4543.ttf) format('truetype');
+  src: url(fonts/KaTeX_SansSerif-Italic.woff2) format('woff2'), url(fonts/KaTeX_SansSerif-Italic.woff) format('woff'), url(fonts/KaTeX_SansSerif-Italic.ttf) format('truetype');
   font-weight: normal;
   font-style: italic;
 }
 @font-face {
   font-family: 'KaTeX_SansSerif';
-  src: url(cd5e231e0cc53b2cb2c0.woff2) format('woff2'), url(02271ec5cb9f5b4588ac.woff) format('woff'), url(2f7bc363fc5424ebda59.ttf) format('truetype');
+  src: url(fonts/KaTeX_SansSerif-Regular.woff2) format('woff2'), url(fonts/KaTeX_SansSerif-Regular.woff) format('woff'), url(fonts/KaTeX_SansSerif-Regular.ttf) format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'KaTeX_Script';
-  src: url(c81d1b2a4b75d3eded60.woff2) format('woff2'), url(073b3402d036714b4370.woff) format('woff'), url(fc9ba5249878cd8f8d88.ttf) format('truetype');
+  src: url(fonts/KaTeX_Script-Regular.woff2) format('woff2'), url(fonts/KaTeX_Script-Regular.woff) format('woff'), url(fonts/KaTeX_Script-Regular.ttf) format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'KaTeX_Size1';
-  src: url(6eec866c69313624be60.woff2) format('woff2'), url(0108e89c9003e8c14ea3.woff) format('woff'), url(6de7d4b539221a49e9e2.ttf) format('truetype');
+  src: url(fonts/KaTeX_Size1-Regular.woff2) format('woff2'), url(fonts/KaTeX_Size1-Regular.woff) format('woff'), url(fonts/KaTeX_Size1-Regular.ttf) format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'KaTeX_Size2';
-  src: url(2960900c4f271311eb36.woff2) format('woff2'), url(3a99e70aee4076660d38.woff) format('woff'), url(57f5c1837853986ea1db.ttf) format('truetype');
+  src: url(fonts/KaTeX_Size2-Regular.woff2) format('woff2'), url(fonts/KaTeX_Size2-Regular.woff) format('woff'), url(fonts/KaTeX_Size2-Regular.ttf) format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'KaTeX_Size3';
-  src: url(e1951519f6f0596f7356.woff2) format('woff2'), url(7947224e8a9914fa332b.woff) format('woff'), url(8d6b6822586eea3d3b20.ttf) format('truetype');
+  src: url(fonts/KaTeX_Size3-Regular.woff2) format('woff2'), url(fonts/KaTeX_Size3-Regular.woff) format('woff'), url(fonts/KaTeX_Size3-Regular.ttf) format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'KaTeX_Size4';
-  src: url(e418bf257af1052628d8.woff2) format('woff2'), url(aeffd8025cba3647f1a6.woff) format('woff'), url(4ad7c7e8bb8d10a34bb7.ttf) format('truetype');
+  src: url(fonts/KaTeX_Size4-Regular.woff2) format('woff2'), url(fonts/KaTeX_Size4-Regular.woff) format('woff'), url(fonts/KaTeX_Size4-Regular.ttf) format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'KaTeX_Typewriter';
-  src: url(c295e7f71970f03c0549.woff2) format('woff2'), url(4c6b94fd1d07f8beff7c.woff) format('woff'), url(c5c02d763c89380dcb4e.ttf) format('truetype');
+  src: url(fonts/KaTeX_Typewriter-Regular.woff2) format('woff2'), url(fonts/KaTeX_Typewriter-Regular.woff) format('woff'), url(fonts/KaTeX_Typewriter-Regular.ttf) format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -7480,7 +7483,7 @@ readers do not read off random characters that represent icons */
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(ebb7a127d2d8ee6f1832.woff2) format("woff2"), url(b823fc0dbb5a5f0c21bb.ttf) format("truetype"); }
+  src: url(fonts/fa-brands-400.woff2) format("woff2"), url(fonts/fa-brands-400.ttf) format("truetype"); }
 
 .fab,
 .fa-brands {
@@ -8907,7 +8910,7 @@ readers do not read off random characters that represent icons */
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url(0caf4c6cf244a90efcc5.woff2) format("woff2"), url(0d03b1bbd1d62c1e1284.ttf) format("truetype"); }
+  src: url(fonts/fa-regular-400.woff2) format("woff2"), url(fonts/fa-regular-400.ttf) format("truetype"); }
 
 .far,
 .fa-regular {
@@ -8921,7 +8924,7 @@ readers do not read off random characters that represent icons */
   font-style: normal;
   font-weight: 900;
   font-display: block;
-  src: url(59edf72a325ac2048d60.woff2) format("woff2"), url(e615bbcb258550973c16.ttf) format("truetype"); }
+  src: url(fonts/fa-solid-900.woff2) format("woff2"), url(fonts/fa-solid-900.ttf) format("truetype"); }
 
 .fas,
 .fa-solid {
@@ -8931,51 +8934,62 @@ readers do not read off random characters that represent icons */
   font-family: "Font Awesome 5 Brands";
   font-display: block;
   font-weight: 400;
-  src: url(ebb7a127d2d8ee6f1832.woff2) format("woff2"), url(b823fc0dbb5a5f0c21bb.ttf) format("truetype"); }
+  src: url(fonts/fa-brands-400.woff2) format("woff2"), url(fonts/fa-brands-400.ttf) format("truetype"); }
 
 @font-face {
   font-family: "Font Awesome 5 Free";
   font-display: block;
   font-weight: 900;
-  src: url(59edf72a325ac2048d60.woff2) format("woff2"), url(e615bbcb258550973c16.ttf) format("truetype"); }
+  src: url(fonts/fa-solid-900.woff2) format("woff2"), url(fonts/fa-solid-900.ttf) format("truetype"); }
 
 @font-face {
   font-family: "Font Awesome 5 Free";
   font-display: block;
   font-weight: 400;
-  src: url(0caf4c6cf244a90efcc5.woff2) format("woff2"), url(0d03b1bbd1d62c1e1284.ttf) format("truetype"); }
+  src: url(fonts/fa-regular-400.woff2) format("woff2"), url(fonts/fa-regular-400.ttf) format("truetype"); }
 @font-face {
   font-family: "FontAwesome";
   font-display: block;
-  src: url(59edf72a325ac2048d60.woff2) format("woff2"), url(e615bbcb258550973c16.ttf) format("truetype"); }
+  src: url(fonts/fa-solid-900.woff2) format("woff2"), url(fonts/fa-solid-900.ttf) format("truetype"); }
 
 @font-face {
   font-family: "FontAwesome";
   font-display: block;
-  src: url(ebb7a127d2d8ee6f1832.woff2) format("woff2"), url(b823fc0dbb5a5f0c21bb.ttf) format("truetype"); }
+  src: url(fonts/fa-brands-400.woff2) format("woff2"), url(fonts/fa-brands-400.ttf) format("truetype"); }
 
 @font-face {
   font-family: "FontAwesome";
   font-display: block;
-  src: url(0caf4c6cf244a90efcc5.woff2) format("woff2"), url(0d03b1bbd1d62c1e1284.ttf) format("truetype");
+  src: url(fonts/fa-regular-400.woff2) format("woff2"), url(fonts/fa-regular-400.ttf) format("truetype");
   unicode-range: U+F003,U+F006,U+F014,U+F016-F017,U+F01A-F01B,U+F01D,U+F022,U+F03E,U+F044,U+F046,U+F05C-F05D,U+F06E,U+F070,U+F087-F088,U+F08A,U+F094,U+F096-F097,U+F09D,U+F0A0,U+F0A2,U+F0A4-F0A7,U+F0C5,U+F0C7,U+F0E5-F0E6,U+F0EB,U+F0F6-F0F8,U+F10C,U+F114-F115,U+F118-F11A,U+F11C-F11D,U+F133,U+F147,U+F14E,U+F150-F152,U+F185-F186,U+F18E,U+F190-F192,U+F196,U+F1C1-F1C9,U+F1D9,U+F1DB,U+F1E3,U+F1EA,U+F1F7,U+F1F9,U+F20A,U+F247-F248,U+F24A,U+F24D,U+F255-F25B,U+F25D,U+F271-F274,U+F278,U+F27B,U+F28C,U+F28E,U+F29C,U+F2B5,U+F2B7,U+F2BA,U+F2BC,U+F2BE,U+F2C0-F2C1,U+F2C3,U+F2D0,U+F2D2,U+F2D4,U+F2DC; }
 
 @font-face {
   font-family: "FontAwesome";
   font-display: block;
-  src: url(afac89562a5301459069.woff2) format("woff2"), url(4baccb548138840fa33a.ttf) format("truetype");
+  src: url(fonts/fa-v4compatibility.woff2) format("woff2"), url(fonts/fa-v4compatibility.ttf) format("truetype");
   unicode-range: U+F041,U+F047,U+F065-F066,U+F07D-F07E,U+F080,U+F08B,U+F08E,U+F090,U+F09A,U+F0AC,U+F0AE,U+F0B2,U+F0D0,U+F0D6,U+F0E4,U+F0EC,U+F10A-F10B,U+F123,U+F13E,U+F148-F149,U+F14C,U+F156,U+F15E,U+F160-F161,U+F163,U+F175-F178,U+F195,U+F1F8,U+F219,U+F250,U+F252,U+F27A; }
 
 @font-face {
   font-family: minion-pro;
-  src: url(c87c19163f207779a208.ttf);
+  src: url(fonts/minion-pro.ttf);
+}
+
+
+@viewport {
+  width: device-width;
+  user-zoom: fixed;
+  max-zoom: 1.0;
 }
 
 body {
-  background: url(635f7cdc87e78023e57a.jpg);
+  background: url(images/marble.jpg);
   background-size: 350px;
   filter: darken(50%);
   print-color-adjust: exact;
+}
+
+._MUIAijW4iFlb8nZsztn {
+  font-size: 98%;
 }
 
 .math {
@@ -9121,6 +9135,9 @@ body {
   border-bottom: 0.6mm solid var(--alt);
   display: flex;
   list-style-type: none;
+}
+
+.FN106hwEdndJ6tFK5TWR {
   font-size: 3.2mm;
 }
 
@@ -9172,6 +9189,10 @@ body {
   margin: 2mm 0 2mm 1mm;
   border: 0.5mm solid var(--alt);
   border-right: none;
+}
+
+.ZVYZreuy500Szzd3ou1L * {
+  font-size: 2.7mm;
 }
 
 .kEmvuqOimSv_CisoGtS2 {
