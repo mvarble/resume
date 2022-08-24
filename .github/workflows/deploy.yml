@@ -20,8 +20,7 @@ jobs:
     - name: build the website
       run: |
         npm run build
-        git rev-parse --short HEAD > ./output/hash_short
-        git rev-parse HEAD > ./output/hash_long
+        git rev-parse --short HEAD > ./output/commit_hash_short
     - uses: actions/upload-artifact@master
       with:
         name: output
@@ -44,11 +43,10 @@ jobs:
     - name: commit build
       run: |
         REPO="mvarble/resume"
-        SHA_SHORT="$(cat hash_short)"
-        SHA_LONG="$(cat hash_long)"
+        SHA_SHORT="$(cat commit_hash_short)"
         git config user.email "bot@rodent.club"
         git config user.name "ratbotgenius"
         git add -A
-        git commit -m "release [$SHA_SHORT](https://github.com/$REPO/commit/$SHA_LONG)"
+        git commit -m "automatic build from commit $SHA_SHORT"
     - name: push build
       run: git push
