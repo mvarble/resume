@@ -39,10 +39,12 @@ jobs:
         path: ./
     - name: commit build
       run: |
+        REPO="mvarble/resume"
+        SHA_LONG="$(git rev-parse origin/main)"
+        SHA_SHORT="$(git rev-parse --short origin/main)"
         git config user.email "bot@rodent.club"
-        git config user.name "ratbot"
+        git config user.name "ratbotgenius"
         git add -A
-        git commit -m "build for commit to '$(git branch -v --contains main)'"
+        git commit -m "release [$SHA_SHORT](https://github.com/$REPO/commit/$SHA_LONG)"
     - name: push build
       run: git push
-        
