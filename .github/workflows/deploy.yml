@@ -40,8 +40,8 @@ jobs:
     - name: commit build
       run: |
         REPO="mvarble/resume"
-        SHA_LONG="$(git rev-parse origin/main)"
-        SHA_SHORT="$(git rev-parse --short origin/main)"
+        SHA_LONG="$(git rev-parse main)"
+        SHA_SHORT="$(git rev-parse --short main)"
         git config user.email "bot@rodent.club"
         git config user.name "ratbotgenius"
         git add -A
