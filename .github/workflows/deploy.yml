@@ -17,10 +17,11 @@ jobs:
         node-version: 16.x
         cache: 'npm'
     - run: npm ci
-    - run: npm run build
-    - run: |
-        git rev-parse --short HEAD > output/hash_short
-        git rev-parse HEAD > output/hash_long
+    - name: build the website
+      run: |
+        npm run build
+        git rev-parse --short HEAD > ./output/hash_short
+        git rev-parse HEAD > ./output/hash_long
     - uses: actions/upload-artifact@master
       with:
         name: output
@@ -43,8 +44,8 @@ jobs:
     - name: commit build
       run: |
         REPO="mvarble/resume"
-        SHA_SHORT="$(cat output/hash_short)"
-        SHA_LONG="$(cat output/hash_long)"
+        SHA_SHORT="$(cat hash_short)"
+        SHA_LONG="$(cat hash_long)"
         git config user.email "bot@rodent.club"
         git config user.name "ratbotgenius"
         git add -A
